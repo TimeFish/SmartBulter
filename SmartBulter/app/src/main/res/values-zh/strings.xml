@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">SmartBulter</string>
+    <string name="title_bulter">智能管家</string>
+    <string name="title_wechat">微信精选</string>
+    <string name="title_girl">美女社区</string>
+    <string name="title_user">个人中心</string>
+    <string name="activity_setting">设置中心</string>
+    <string name="text_setting">设置</string>
 </resources>

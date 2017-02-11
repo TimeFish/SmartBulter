@@ -26,10 +26,11 @@ public class BaseActivity extends AppCompatActivity{
 
         //显示返回键
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //去掉阴影
+        getSupportActionBar().setElevation(0);
     }
 
     //菜单栏操作
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
