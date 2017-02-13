@@ -9,7 +9,7 @@ import android.content.SharedPreferences;
  * 文件名:    ShareUtil
  * 创建者:    XY
  * 创建时间:   2017/2/13 9:32
- * 描述:       TODO
+ * 描述:       SharedPreferences的封装
  */
 public class ShareUtil {
 
