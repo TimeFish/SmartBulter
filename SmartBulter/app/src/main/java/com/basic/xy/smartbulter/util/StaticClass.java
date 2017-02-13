@@ -9,4 +9,8 @@ package com.basic.xy.smartbulter.util;
  * 描述:       数据/常量
  */
 public class StaticClass {
+    //闪屏页延时标记，msg
+    public static final int HANDLER_SPLASH = 1001;
+    //是否第一次运行，SharePreferences的key
+    public static final String SHARE_IS_FIRST = "isFirst";
 }

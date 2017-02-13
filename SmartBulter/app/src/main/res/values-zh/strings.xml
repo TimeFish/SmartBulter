@@ -6,4 +6,5 @@
     <string name="title_user">个人中心</string>
     <string name="activity_setting">设置中心</string>
     <string name="text_setting">设置</string>
+    <string name="text_guide">引导页</string>
 </resources>
