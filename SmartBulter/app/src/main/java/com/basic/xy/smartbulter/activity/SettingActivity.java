@@ -1,4 +1,4 @@
-package com.basic.xy.smartbulter.ui;
+package com.basic.xy.smartbulter.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

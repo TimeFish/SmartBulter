@@ -1,4 +1,4 @@
-package com.basic.xy.smartbulter.ui;
+package com.basic.xy.smartbulter.activity;
 
 import android.os.Bundle;
 import android.os.PersistableBundle;

@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".ui.SplashActivity"
+        <activity android:name=".activity.SplashActivity"
             android:theme="@style/NoActionBarFullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,12 +21,12 @@
 
         <!-- 设置 -->
         <activity
-            android:name=".ui.SettingActivity"
+            android:name=".activity.SettingActivity"
             android:label="@string/text_setting" />
         <!--主页-->
         <activity android:name=".MainActivity" />
         <!--引导页-->
-        <activity android:name=".ui.GuideActivity"/>
+        <activity android:name=".activity.GuideActivity"/>
     </application>
 
 </manifest>

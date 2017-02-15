@@ -15,7 +15,7 @@ import com.basic.xy.smartbulter.fragment.BulterFragment;
 import com.basic.xy.smartbulter.fragment.GirlFragment;
 import com.basic.xy.smartbulter.fragment.UserFragment;
 import com.basic.xy.smartbulter.fragment.WechatFragment;
-import com.basic.xy.smartbulter.ui.SettingActivity;
+import com.basic.xy.smartbulter.activity.SettingActivity;
 
 import java.util.ArrayList;
 import java.util.List;
