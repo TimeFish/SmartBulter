@@ -16,6 +16,7 @@ import com.basic.xy.smartbulter.fragment.GirlFragment;
 import com.basic.xy.smartbulter.fragment.UserFragment;
 import com.basic.xy.smartbulter.fragment.WechatFragment;
 import com.basic.xy.smartbulter.activity.SettingActivity;
+import com.tencent.bugly.crashreport.CrashReport;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setElevation(0);
         initData();
         initView();
+        CrashReport.testJavaCrash();
     }
 
     private void initData() {
