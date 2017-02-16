@@ -3,6 +3,8 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
+//    **兼容Android6.0系统所需，如果这句话报错，可在dependencies标签下使用compile 'cn.bmob.android:http-legacy:1.0'**
+    useLibrary 'org.apache.http.legacy'
     defaultConfig {
         applicationId "com.basic.xy.smartbulter"
         minSdkVersion 17
@@ -30,4 +32,7 @@ dependencies {
     compile 'com.github.castorflex.verticalviewpager:library:19.0.1'
     compile 'com.tencent.bugly:crashreport:latest.release' //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.2.0
     testCompile 'junit:junit:4.12'
+    //bmob
+    compile 'cn.bmob.android:bmob-sdk:3.5.0'
+    compile 'cn.bmob.android:http-legacy:1.0'
 }

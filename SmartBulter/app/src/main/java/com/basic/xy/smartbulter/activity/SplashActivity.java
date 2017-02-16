@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
+import com.basic.xy.smartbulter.MainActivity;
 import com.basic.xy.smartbulter.R;
 import com.basic.xy.smartbulter.util.ShareUtil;
 import com.basic.xy.smartbulter.util.StaticClass;
@@ -40,7 +41,7 @@ public class SplashActivity extends AppCompatActivity {
                     if (isFirst()) {
                         startActivity(new Intent(SplashActivity.this, GuideActivity.class));
                     } else {
-                        startActivity(new Intent(SplashActivity.this, GuideActivity.class));
+                        startActivity(new Intent(SplashActivity.this, MainActivity.class));
                     }
                     finish();
                     break;

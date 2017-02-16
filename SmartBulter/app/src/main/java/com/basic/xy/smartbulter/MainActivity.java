@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setElevation(0);
         initData();
         initView();
-        CrashReport.testJavaCrash();
     }
 
     private void initData() {
