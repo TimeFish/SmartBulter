@@ -1,11 +1,14 @@
 package com.basic.xy.smartbulter.activity;
 
+import android.content.Intent;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
+import com.basic.xy.smartbulter.MainActivity;
 import com.basic.xy.smartbulter.R;
 import com.basic.xy.smartbulter.adapter.GuideAdapter;
 
@@ -21,7 +24,9 @@ public class GuideActivity extends AppCompatActivity {
     //三个引导子页
     private View view1,view2, view3;
     //小圆点
-    private ImageView point1,point2, point3; 
+    private ImageView point1,point2, point3;
+    private ImageView mBackIV;
+    private Button mEnterBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +69,21 @@ public class GuideActivity extends AppCompatActivity {
         point2 = (ImageView) findViewById(R.id.point2);
         point3 = (ImageView) findViewById(R.id.point3);
         setPointStyle(0);
+
+        mBackIV = (ImageView) findViewById(R.id.iv_back);
+        mBackIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(GuideActivity.this, MainActivity.class));finish();
+            }
+        });
+        mEnterBtn = (Button) findViewById(R.id.btn_enter);
+        mEnterBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(GuideActivity.this, MainActivity.class));finish();
+            }
+        });
     }
 
     private void setPointStyle(int checkedPosition) {
