@@ -57,6 +57,14 @@ public class GuideActivity extends AppCompatActivity {
             public void onPageSelected(int position) {
                 //当页面滑动完毕后，改变小圆点样式。如果用onPageScrolled，是在有滑动的时候，就改变小圆点样式
                 setPointStyle(position);
+                //设置跳过和进入主页是否隐藏
+                if (position == 2) {
+                    mBackIV.setVisibility(View.GONE);
+                    mEnterBtn.setVisibility(View.VISIBLE);
+                } else {
+                    mBackIV.setVisibility(View.VISIBLE);
+                    mEnterBtn.setVisibility(View.INVISIBLE);
+                }
             }
 
             @Override
