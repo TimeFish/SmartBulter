@@ -13,7 +13,6 @@ import com.basic.xy.smartbulter.R;
 import com.basic.xy.smartbulter.entity.MyUser;
 import com.basic.xy.smartbulter.util.L;
 
-import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
 
@@ -25,7 +24,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText mDescET;
     private RadioGroup mGenderRG;
     private EditText mEmail;
-    private boolean isMan;
+    private boolean isMan = true;
     private Button mRegisterBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +58,7 @@ public class RegisterActivity extends AppCompatActivity {
         String age = mAgeET.getText().toString().trim();
         String desc = mDescET.getText().toString().trim();
         String email = mEmail.getText().toString().trim();
+        isRegistered();
         if (!(TextUtils.isEmpty(username) & TextUtils.isEmpty(password) & TextUtils.isEmpty(confirmPwd) & TextUtils.isEmpty(age) & TextUtils.isEmpty(email) )) {
             if (password.equals(confirmPwd)) {
                 //获取简介
@@ -69,10 +69,10 @@ public class RegisterActivity extends AppCompatActivity {
                 mGenderRG.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                     @Override
                     public void onCheckedChanged(RadioGroup group, int checkedId) {
-                        if (checkedId == R.id.rb_woman) {
-                            isMan = false;
-                        } else {
+                        if (checkedId == R.id.rb_man) {
                             isMan = true;
+                        } else {
+                            isMan = false;
                         }
                     }
                 });
@@ -102,5 +102,11 @@ public class RegisterActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "输入不可为空", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    /**
+     * 检测该用户名的用户是否已经注册
+     */
+    private void isRegistered() {
     }
 }

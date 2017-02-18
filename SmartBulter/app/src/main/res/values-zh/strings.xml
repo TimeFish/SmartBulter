@@ -8,4 +8,5 @@
     <string name="text_setting">设置</string>
     <string name="text_guide">引导页</string>
     <string name="text_enter">进入主页</string>
+    <string name="warn_input_null">输入不能为空</string>
 </resources>

@@ -15,7 +15,7 @@ import cn.bmob.v3.Bmob;
  * 描述:       TODO
  */
 public class BaseApplication extends Application {
-
+    private final String bmobApplicationId = "7c01a62cf6d25347331f1ad5b644ea8d";
     @Override
     public void onCreate() {
         super.onCreate();
@@ -26,7 +26,7 @@ public class BaseApplication extends Application {
 
     private void initBmob() {
         //第一种：默认初始化
-        Bmob.initialize(this, "Your Application ID");
+        Bmob.initialize(this, bmobApplicationId);
 
         //第二种：自v3.4.7版本开始,设置BmobConfig,允许设置请求超时时间、文件分片上传时每片的大小、文件的过期时间(单位为秒)，
         //BmobConfig config =new BmobConfig.Builder(this)
