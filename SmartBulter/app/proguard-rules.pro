@@ -15,5 +15,10 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+#腾讯bugly
 -dontwarn com.tencent.bugly.**
 -keep public class com.tencent.bugly.**{*;}
+#网易云捕
+-keep class com.netease.nis.bugrpt.** {*;}
+# 保留源文件名并保留行号
+-keepattributes SourceFile,LineNumberTable

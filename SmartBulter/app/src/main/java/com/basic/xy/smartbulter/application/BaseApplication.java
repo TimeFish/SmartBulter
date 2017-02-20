@@ -2,6 +2,7 @@ package com.basic.xy.smartbulter.application;
 
 import android.app.Application;
 
+import com.netease.nis.bugrpt.CrashHandler;
 import com.tencent.bugly.crashreport.CrashReport;
 
 import cn.bmob.v3.Bmob;
@@ -22,6 +23,12 @@ public class BaseApplication extends Application {
 
         initBugly();
         initBmob();
+        initCrash163();
+    }
+
+    //网易云捕
+    private void initCrash163() {
+        CrashHandler.init(getApplicationContext());
     }
 
     private void initBmob() {
