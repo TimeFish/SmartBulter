@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.view.Gravity;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -16,6 +18,7 @@ import com.basic.xy.smartbulter.MainActivity;
 import com.basic.xy.smartbulter.R;
 import com.basic.xy.smartbulter.entity.MyUser;
 import com.basic.xy.smartbulter.util.L;
+import com.basic.xy.smartbulter.view.CustomDialog;
 
 import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
@@ -26,6 +29,7 @@ public class LoginActivity extends AppCompatActivity {
     private CheckBox mRemPwdCB;
     private Button mLoginBtn,mRegisterBtn;
     private TextView mForgetPwdTV;
+    private CustomDialog customDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,6 +73,9 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(new Intent(LoginActivity.this,ForgetPasswordActivity.class));
             }
         });
+
+        customDialog = new CustomDialog(this, WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT, R.layout.dialog_loading, R.style.Theme_dialog, Gravity.CENTER, R.style.pop_anim_style);
+        customDialog.setCancelable(false);
     }
 
 
@@ -81,11 +88,13 @@ public class LoginActivity extends AppCompatActivity {
         String password = mPasswordET.getText().toString().trim();
 
         if (!(TextUtils.isEmpty(username) & TextUtils.isEmpty(password))) {
+            customDialog.show();
             //登录
             BmobUser.loginByAccount(username, password, new LogInListener<MyUser>() {
 
                 @Override
                 public void done(MyUser user, BmobException e) {
+                    customDialog.dismiss();
                     if (user != null) {
                         //目前Bmob后台不具有邮箱未验证限制登录功能，需要自己在前台验证
                         if (user.getEmailVerified()) {
