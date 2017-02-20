@@ -66,15 +66,11 @@ public class LoginActivity extends AppCompatActivity {
         mForgetPwdTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onForgetPwd();
+                startActivity(new Intent(LoginActivity.this,ForgetPasswordActivity.class));
             }
         });
     }
 
-
-    private void onForgetPwd() {
-
-    }
 
     private void onCheckedRemberPwd() {
     }
@@ -85,14 +81,20 @@ public class LoginActivity extends AppCompatActivity {
         String password = mPasswordET.getText().toString().trim();
 
         if (!(TextUtils.isEmpty(username) & TextUtils.isEmpty(password))) {
+            //登录
             BmobUser.loginByAccount(username, password, new LogInListener<MyUser>() {
 
                 @Override
                 public void done(MyUser user, BmobException e) {
                     if (user != null) {
-                        L.i("用户登录成功");
-                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                        finish();
+                        //目前Bmob后台不具有邮箱未验证限制登录功能，需要自己在前台验证
+                        if (user.getEmailVerified()) {
+                            L.i("用户登录成功");
+                            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                            finish();
+                        } else {
+                            Toast.makeText(LoginActivity.this, "请前往邮箱验证", Toast.LENGTH_SHORT).show();
+                        }
                     } else {
                         L.e(e.toString());
                     }
