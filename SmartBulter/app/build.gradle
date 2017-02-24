@@ -12,10 +12,10 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        ndk {
-            //设置支持的SO库架构
-            abiFilters "armeabi" //,"armeabi-v7a", "x86","arm64-v8a","x86_64"
-        }
+//        ndk {
+//            //设置支持的SO库架构
+//            abiFilters "armeabi" //,"armeabi-v7a", "x86","arm64-v8a","x86_64"
+//        }
     }
     buildTypes {
         release {
@@ -41,4 +41,6 @@ dependencies {
     compile 'cn.bmob.android:http-legacy:1.0'
     //网易云捕
     compile 'com.netease.nis.plugin:bugrpt:latest.release'//如果指定版本号接入的，升级版本后请clean下工程
+    //圆形头像开源库
+    compile 'de.hdodenhof:circleimageview:2.1.0'
 }

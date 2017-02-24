@@ -24,6 +24,8 @@ public class BaseApplication extends Application {
         initBugly();
         initBmob();
         initCrash163();
+        //崩溃测试代码
+//        CrashReport.testJavaCrash();
     }
 
     //网易云捕

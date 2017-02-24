@@ -11,4 +11,5 @@
     <string name="warn_input_null">输入不能为空</string>
     <string name="text_reset_pwd">重置密码</string>
     <string name="text_change_pwd">修改密码</string>
+    <string name="text_edit">取消编辑</string>
 </resources>

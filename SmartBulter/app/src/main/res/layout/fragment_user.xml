@@ -2,12 +2,125 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.basic.xy.smartbulter.fragment.UserFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:gravity="center"
+                android:background="@drawable/user_frgament_bg"
+                android:orientation="vertical">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/civ_avatar"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:src="@drawable/avatar"
+                    app:civ_border_width="2dp"
+                    app:civ_border_color="@color/color_white"/>
+                <Button
+                    android:id="@+id/btn_edit"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_btn"
+                    android:text="编辑资料"/>
+
+            </LinearLayout>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+                <TableRow>
+                    <TextView
+                        android:text="姓名："
+                        android:id="@+id/textView" />
+
+                    <EditText
+                        android:id="@+id/et_name"
+                        android:enabled="false"/>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:text="年龄："
+                        android:id="@+id/textView2" />
+
+                    <EditText
+                        android:id="@+id/et_age2"
+                        android:enabled="false"/>
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:text="性别："/>
+                    <EditText
+                        android:id="@+id/et_gender"
+                        android:enabled="false"/>
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:text="简介："/>
+                    <EditText
+                        android:id="@+id/et_intro"
+                        android:enabled="false"/>
+
+                </TableRow>
+            </TableLayout>
+
+            <Button
+                android:id="@+id/btn_commit"
+                android:visibility="gone"
+                android:layout_gravity="center"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:text="提交"
+                android:background="@drawable/shape_btn"/>
+            <TextView
+                android:id="@+id/tv_search_local"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp"
+                android:text="归属地查询"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#000"/>
+            <TextView
+                android:id="@+id/tv_search_move"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="物流查询"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#000"/>
+            <Button
+                android:id="@+id/btn_logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="退出登录"
+                android:background="@drawable/shape_btn"/>
+        </LinearLayout>
+
+    </ScrollView>
 
 </FrameLayout>
